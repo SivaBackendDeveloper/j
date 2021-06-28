@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'j/index.html'%}
+{%block body_block%}
+<center>
+<h1>Member Update Form</h1><hr>
+<form method="post">
+{%csrf_token%}
+Name: <input type="text" name="name" value="{{member.name}}"><p></p>
+mobilenumber: <input type="text" name="mobilenumber" value="{{member.mobilenumber}}"><p></p>
+Role: <input type="text" name="role" value="{{member.role}}"><p></p>
+Area: <input type="text" name="role" value="{{member.area}}"><p></p>
+<input type="submit" class='btn btn-warning btn-lg' value="Update Record">
+</form>
+    </center>
+{%endblock%}

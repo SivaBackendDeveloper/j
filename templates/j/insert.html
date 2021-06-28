@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'j/index.html'%}
+{%block body_block%}
+<center>
+<h1>Member Insert Form</h1><hr>
+<form method="post">
+<table border='1'>
+{{form}}
+</table>
+{%csrf_token%}
+<br>
+<input type="submit" class='btn btn-success btn-lg' value="Insert Record">
+</form>
+{%endblock%}
+</center>

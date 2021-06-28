@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+table, td, th {
+  border: 1px solid black;
+}
+th {
+  background-color: green;
+  color:white;
+}
+body {
+  background-color: linen;
+}
+h1 {
+  background-color: darkblue;
+  color:white;
+}
+h2 {
+
+  color:red;
+}
+
+</style>
+</head>
+{%block body_block%}
+<center>
+    <h2 >** JANASAINICS **</h2><hr>
+    <marquee >JAI JANASENA</marquee><hr>
+<h1 >Members Information </h1><hr>
+<br>
+<div class="row">
+<div class="card card-body">
+
+<form method="get">
+    {{myFilter.form}}
+
+    <button class="btn btn-primary" type="submit">Search</button>
+</form>
+</div>
+</div>
+<table >
+<thead >
+<th>Name</th>
+<th>Mobilenumber</th>
+<th>Role</th>
+<th>Area</th>
+
+<th>Actions</th>
+</thead>
+{%for member in members %}
+<tr>
+<td>{{member.name}}</td>
+<td>{{member.mobilenumber}}</td>
+<td>{{member.role}}</td>
+<td>{{member.area}}</td>
+
+<td>
+<a href="/update/{{member.id}}">Update</a>
+<a href="/delete/{{member.id}}">Delete</a>
+</td>
+</tr>
+{%endfor%}
+</table><br><br><br>
+<a href="/insert" class='btn btn-primary btn-lg'>Do You Want to Insert New Member</a>
+{%endblock%}
+</center>
