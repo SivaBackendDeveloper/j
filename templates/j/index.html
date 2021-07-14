@@ -28,15 +28,23 @@ h2 {
 </head>
 {%block body_block%}
 <center>
-    <h2 >** JANASAINICS **</h2><hr>
+    <h2 >** JANASAINICS **</h2>
     <marquee>
     <img src="static/images/j3.jpg" width="600" height="100" >
   </marquee>
-<h1 >Members Information </h1><hr>
+<h1 >Members Information </h1>
+</center>
+{% if user.is_authenticated %}
+     <a class="btn btn-primary btn-lg"
+     href="/logout" role="button">LOGOUT</a>
+     {% else %}
+      <a class="btn btn-primary btn-lg"
+       href="/login" role="button">LOGIN</a>
+     {% endif %}
+<center>
 <br>
 <div class="row">
 <div class="card card-body">
-
 <form method="get">
     {{myFilter.form}}
 
