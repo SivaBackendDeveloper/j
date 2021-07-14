@@ -1,4 +1,4 @@
-from django.contrib import messages,auth
+from django.contrib import messages, auth
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
@@ -65,9 +65,9 @@ def login_view(request):
     return render(request = request,
                     template_name = "registration/login.html",
                     context={"form":form})
-   
-   def logout_view(request):
-      auth.logout(request)
-      return redirect('/')
+
+def logout_view(request):
+    auth.logout(request)
+    return redirect('/')
 
 
