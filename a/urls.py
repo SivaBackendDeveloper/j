@@ -29,7 +29,8 @@ urlpatterns = [
   url(r'^delete/(?P<id>\d+)/$', views.delete_view),
   url(r'^update/(?P<id>\d+)/$', views.update_view),
   path('accounts/',include('django.contrib.auth.urls' )),
-
+  url(r'^login/', views.login_view),  
+  url(r'^logout/', views.logout_view),
   ]
 if settings.DEBUG:
  urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
